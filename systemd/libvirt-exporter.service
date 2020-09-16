@@ -1,0 +1,12 @@
+[Unit]
+Description=Libvirt Prometheus Exporter
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/libvirt-exporter
+Restart=on-failure
+User=libvirt-exporter
+Group=nobody
+
+[Install]
+WantedBy=multi-user.target
